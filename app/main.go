@@ -14,7 +14,9 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 
     r := mux.NewRouter()
-    r.HandleFunc("/", homeHandler)
+    r.Handle("/", http.FileServer(http.Dir("pages")))
+    // r.HandleFunc("/", homeHandler)
+    // http.Handle("/", http.FileServer(http.Dir("pages")))
     r.PathPrefix("/pages/").Handler(http.StripPrefix("/pages/", http.FileServer(http.Dir("pages/"))))
     http.Handle("/", r)
     http.ListenAndServe(":3000", nil)
