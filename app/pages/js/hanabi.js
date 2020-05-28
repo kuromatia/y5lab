@@ -3,13 +3,13 @@ function Particle(x,y,hu,firework){
   this.firework = firework; // boolian
   this.lifespan = 255; // variant of saturation and brightbess
   this.hu = hu; // hue (color)
-  
+
 
   if(this.firework){
     this.vel = createVector(0, random(-12,-8));
   }else{
     this.vel = p5.Vector.random2D();
-    this.vel.mult(random(2, 20)); //radius of explosion
+    this.vel.mult(random(2, 30)); //radius of explosion
   }
   this.acc = createVector(0,0);
 
@@ -20,11 +20,14 @@ function Particle(x,y,hu,firework){
       stroke(hu,this.lifespan/3 + 30,this.lifespan); //color
       // stroke(350, 28, 100);
       stroke(hu, 255, 255);
+      fill(hu, 255, 255);
     }else{
       strokeWeight(4); // after explosion
       stroke(hu, 255, 255); // color
+      fill(hu, 255, 255);
     }
     point(this.pos.x, this.pos.y) // stroke > point
+    // ellipse(this.pos.x, this.pos.y, 1, 1)
   }
 
   this.done = function(){
@@ -84,7 +87,7 @@ function Firework(){
         this.explode();
       }
     }
-    
+
     for(var i = this.particles.length - 1; i >= 0; i--){
       this.particles[i].applyForce(gravity);
       this.particles[i].update();
@@ -109,6 +112,7 @@ function Firework(){
 
 var fireworks = [];
 var gravity;
+var prob = 0.95;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -122,7 +126,13 @@ function setup(){
 function draw(){
   colorMode(RGB);
   background(0,0,0,25);
-  if(random() > 0.95){
+  if (frameCount < 360) prob = 0.95;
+  else if (frameCount < 1200) prob = 0.92;
+  else if (frameCount < 2400) prob = 0.90;
+  else if (frameCount < 3600) prob = 0.85;
+  else prob = 0.83;
+
+  if(random() > prob){
     fireworks.push(new Firework());
   }
   for(var i = fireworks.length - 1; i>=0; i--){
