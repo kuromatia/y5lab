@@ -6,11 +6,11 @@ var noiseValY = Math.random()*100;
 function makeEclipse(x, y){
   fill(0, 0, 0);
   stroke(255, 255, 0);
-  strokeWeight(random(0, 10));
+  strokeWeight(random(0, 15));
   ellipse(x, y, width/3);
-
-  nisX = noise(noiseValX)*100;
-  nisY = noise(noiseValY)*100;
+  
+  nisX = noise(noiseValX)*200;
+  nisY = noise(noiseValY)*200;
 
   noiseValX += 0.01;
   noiseValY += 0.01;
