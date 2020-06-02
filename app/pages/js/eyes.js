@@ -12,6 +12,15 @@ function draw() {
   makeEye(nisX+width/4, nisY+height/2, 50);
   makeEye(nisX+width/4*3, nisY+height/2, 40);
 
+  // if(frameCount > 1200){
+  //   makeEye(nisX+width/4, nisY+height/2, 50, c=color(255, 0, 0));
+  //   makeEye(nisX+width/4*3, nisY+height/2, 40, c=color(255, 0, 0));
+  // }
+  // else {
+  //   makeEye(nisX+width/4, nisY+height/2, 50);
+  //   makeEye(nisX+width/4*3, nisY+height/2, 40);
+  // }
+
 }
 
 
@@ -20,8 +29,8 @@ var nisY = 450;
 var noiseValX = Math.random()*100;
 var noiseValY = Math.random()*100;
 
-function makeEye(x, y, nisV=50){
-  fill(0, 0, 0);
+function makeEye(x, y, nisV=50, c=color(0, 0, 0)){
+  fill(c);
   stroke(255, 255, 255);
   strokeWeight(random(0, 10));
   ellipse(x, y, width/6);
