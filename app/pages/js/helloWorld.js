@@ -18,7 +18,7 @@ var cnt = 0;
 var txt = "#include <stdio.h> int main() { printf(\"Hello, C !\\n\"); return 0; }\n"+
           "#include <iostream> int main() { std::cout << \"Hello, C++ !\" << std::endl; return 0; }\n" +
           "public class Hello { public static void main(String[] args) { System.out.println(\"Hello, Java !\"); } }\n" +
-          "using System; class Hello { static void Main(string[] args)Console.WriteLine(\"Hello, C# !\"); } }\n" +
+          "using System; class Hello { static void Main(string[] args) Console.WriteLine(\"Hello, C# !\"); } }\n" +
           "package main import \"fmt\" func main() { fmt.Println(\"Hello, Go !\") }\n" +
           "console.log(\"Hello, Javascript !\");\n" +
           "<?php echo \"Hellom PHP !\".PHP_EOL;\n" +
