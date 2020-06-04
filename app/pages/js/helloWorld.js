@@ -1,11 +1,10 @@
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  textSize(width / 50);
+  textSize(width / 55);
   fill(0, 255, 0);
 }
 
 function draw() {
-  // background(0);
   if (frameCount % 5 == 0){
     background(0);
   }
@@ -21,7 +20,7 @@ var txt = "#include <stdio.h> int main() { printf(\"Hello, C !\\n\"); return 0; 
           "using System; class Hello { static void Main(string[] args) Console.WriteLine(\"Hello, C# !\"); } }\n" +
           "package main import \"fmt\" func main() { fmt.Println(\"Hello, Go !\") }\n" +
           "console.log(\"Hello, Javascript !\");\n" +
-          "<?php echo \"Hellom PHP !\".PHP_EOL;\n" +
+          "<?php echo \"Hello, PHP !\".PHP_EOL;\n" +
           "main = putStrLn \"Hello, Haskell !\"\n" +
           "print(\"Hello, Python !\")\n" +
           "print \"Hello, Perl !\\n\";\n" +
