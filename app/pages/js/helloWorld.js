@@ -1,6 +1,8 @@
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  textSize(width / 55);
+  // textSize(width / 55);
+  textSize(height / 30);
+
   fill(0, 255, 0);
 }
 
